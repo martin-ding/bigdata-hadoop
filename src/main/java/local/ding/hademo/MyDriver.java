@@ -25,8 +25,10 @@ public class MyDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(LongWritable.class);
 
+        job.setOutputFormatClass(MyOutputFormat.class);
+
         FileInputFormat.setInputPaths(job, new Path("/Users/dingmac/Downloads/hademo/input/input1"));
-        FileOutputFormat.setOutputPath(job, new Path("/Users/dingmac/Downloads/hademo/output/output1"));
+        FileOutputFormat.setOutputPath(job, new Path("/Users/dingmac/Downloads/hademo/output/output2"));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);
