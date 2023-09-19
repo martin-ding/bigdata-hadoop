@@ -28,6 +28,7 @@ public class MyDriver {
         job.setOutputFormatClass(MyOutputFormat.class);
 
         FileInputFormat.setInputPaths(job, new Path("/Users/dingmac/Downloads/hademo/input/input1"));
+        //since _SUCCESS file need to be written in disk/dir ,so We need assign a dir for this
         FileOutputFormat.setOutputPath(job, new Path("/Users/dingmac/Downloads/hademo/output/output2"));
 
         boolean b = job.waitForCompletion(true);
